@@ -1,0 +1,223 @@
+*,
+a::after,
+a::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+}
+body {
+  background-color: #fafafa;
+}
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 93.5rem;
+  margin: 3rem auto 0;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#wrapper > .container {
+  display: flex;
+  padding: 0 8rem;
+}
+
+.phone-app {
+  height: 61.8rem;
+  background: url(../images/iphone.png) center no-repeat;
+  background-size: cover;
+  flex: 1;
+}
+
+.form-data {
+  width: 100%;
+  max-width: 35rem;
+  flex: 1;
+  margin-top: 3rem;
+}
+.form-data form {
+  padding: 1rem 0;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+}
+
+form .logo {
+  height: 5.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.2rem 8.6rem 3.2rem;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  padding: 0.9rem 0 0.7rem 0.8rem;
+  height: 3.8rem;
+  width: 28rem;
+  margin: 0.4rem;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  outline: #ddd;
+}
+
+input::placeholder {
+  color: #999;
+  font-size: 1.2rem;
+  letter-spacing: 0.3px;
+}
+
+form button {
+  width: 28rem;
+  height: 3rem;
+  background-color: #b2dffc;
+  border: none;
+  border-radius: 4px;
+  margin-top: 0.8rem;
+  color: #fff;
+  margin: 1rem auto 2rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.seperator {
+  color: #bbb;
+  font-size: 1.2rem;
+  position: relative;
+  width: 28rem;
+  text-align: center;
+}
+
+.seperator::before,
+.seperator::after {
+  content: "";
+  position: absolute;
+  width: 12rem;
+  height: 0.5px;
+  background-color: #ccc;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.seperator::before {
+  left: 0;
+}
+.seperator::after {
+  right: 0;
+}
+.facebook-login {
+  margin: 2rem;
+  color: #78aacc;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.facebook-login .fa-facebook-square {
+  color: #385185;
+  font-size: 2rem;
+}
+
+.reset-password {
+  font-size: 1.2rem;
+  color: #385185;
+  padding-bottom: 1rem;
+}
+
+.sign-up {
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  text-align: center;
+}
+.sign-up h2 {
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+.sign-up a {
+  color: #0095f7;
+  font-weight: 600;
+}
+
+.download-app {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 31.5rem;
+  height: 10.2rem;
+  justify-content: space-between;
+}
+.download-app h2 {
+  margin: 1rem auto;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+.badges {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.badges img {
+  display: block;
+  width: 45%;
+  height: 100%;
+}
+
+footer > .container {
+  padding: 3.8rem 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  max-width: 101.2rem;
+}
+
+.footer-nav .nav-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-right: 10%;
+}
+
+.nav-link {
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #004078;
+  text-transform: uppercase;
+}
+
+footer p {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 1.2rem;
+}

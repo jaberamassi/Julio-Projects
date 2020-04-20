@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project#10</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html" class="ctn-btn"> jerusalem City</a>
+        </div>
+        <div class="nav-icons">
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="" class="nav-link">tours</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="" class="nav-link">pricing</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="" class="nav-link">location</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="" class="nav-link">about</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-tone">
+        <div class="hero-textbox">
+          <h1 class="main-heading">jerusalem<br />palestine</h1>
+          <h2 class="sub-heading">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+            laborum
+          </h2>
+          <a href="" class="cta-btn">learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const barsMenu = document.querySelector(".nav-icons");
+      const myNav = document.querySelector(".nav");
+
+      barsMenu.addEventListener("click", function () {
+        myNav.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

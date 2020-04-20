@@ -1,0 +1,786 @@
+
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+/*Global styles*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: 'Source Sans Pro', sans-serif;
+    --second-font: 'Herr Von Muellerhoff', cursive;
+    --body-font: 'Cabin', sans-serif;
+  
+    --dark-color: #252525;
+    --second-color: #c59d5f;
+    --body-color: #515151;
+}
+
+html{
+  font-family: var(--body-font);
+  font-size: 10px;
+  color: var(--body-font-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+section{
+  padding: 3.9rem;
+  overflow: hidden;
+}
+
+img{
+  width: 100%;
+  max-width: 100%;
+}
+
+a{
+  text-decoration: none !important;
+  color: #fff;
+}
+
+p{
+  font-size: 1.6rem
+}
+
+.container{
+  width: 100%;
+  max-width: 122.5rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+/************************[ End Global ]********************/
+/**********************************************************/
+/**********************************************************/
+/*******************[ Start My Framework ]*****************/
+
+.btn{
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: -2px;
+  border-radius: .4rem
+}
+
+.global-headline{
+  text-align: center;
+  margin-top: 3.9rem;
+}
+
+.sub-headline{
+  font-size: 8.5rem;
+  font-family: var(--second-font);
+  color: var(--second-color);
+  font-weight: 100;
+  line-height: .4;
+  letter-spacing: 2px;
+  /*Aniamtion Part*/
+  opacity: 0;
+  animation: fadeUp .5s forwards;
+  animation-delay: .5s;
+}
+
+.sub-headline .first-letter{
+  text-transform: uppercase;
+  font-size: 10.3rem
+}
+
+.headline{
+  font-family: var(--main-font);
+  font-size: 3.7rem;
+  font-weight: 900;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 0;
+  margin-right: -.5rem;
+  /*Aniamtion Part*/
+  opacity: 0;
+  animation: scale .5s forwards;
+}
+
+.fa-asterisk{
+  font-size: 1.2rem;
+  margin: 0 1rem 
+}
+
+.between{
+  min-height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images-group{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+
+/*********************[ End My Framework ]******************/
+/***********************************************************/
+/***********************************************************/
+/****************[ Start Header  & Nav Bar  ]***************/
+header{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent)
+  
+}
+
+nav{
+  height: 7.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle{
+  color: #fff;
+  font-size: 2.2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2.5rem;
+  cursor: pointer;
+  z-index: 1500;
+}
+
+.menu-toggle .fa-times{
+  display: none
+}
+
+nav::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.95);
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity .5s
+}
+
+.nav-list{
+  list-style: none;
+  padding: 4.4rem;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: var(--maincolor-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1250;
+  transform: translateX(-100%);
+  transition: transform 650ms
+}
+
+.open .fa-times{
+  display: block
+}
+
+.open .fa-bars{
+  display: none
+}
+
+.open .nav-list{
+  transform: translateX(0);
+}
+
+
+.open .nav::before{
+  opacity: 1;
+  transform: scale(1)
+}
+
+.nav-item {
+  border-bottom: 2px solid rgba(255,255,255,.3)
+}
+
+.nav-link{
+  display: block;
+  color: #fff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: -2px;
+  transition: color.5s;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+  color: var(--second-color);
+}
+
+/*****************[ End Header & Nav Bar Div ]******************/
+/***************************************************************/
+/***************************************************************/
+/*********************[ Start  Hero Section]********************/
+
+.hero{
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/hero.jpg) center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: center
+}
+
+.headline-description .seprator{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.seprator .line{
+  width: 100%;
+  max-width: 8.4rem;
+  height: .25rem;
+  background-color: #eee;
+  position: relative;
+  /*Aniamtion Part*/
+  opacity: 0;
+  animation: grow 2s forwards;
+  animation-delay: .9s;
+}
+
+.seprator .line-right::before,
+.seprator .line-left::before{
+  content: "";
+  border: .6rem solid transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /*Aniamtion Part*/
+  opacity: 0;
+  animation: grow 2s forwards;
+  animation-delay: 1.2s;
+}
+
+.seprator .line-right::before{
+  border-right-color: #fff;
+  right: 0
+}
+
+.seprator .line-left::before{
+  border-left-color: #fff;
+  left: 0
+}
+
+.seprator .fa-asterisk{
+  color: var(--second-color);
+    /*Aniamtion Part*/
+    opacity: 0;
+    animation: spin 1s forwards;
+    animation-delay: 1.5s;
+}
+
+.single-animation{
+  /*Aniamtion Part*/
+  opacity: 0;
+  animation: fadeDown 1s forwards;
+  animation-delay: 1.2s;
+}
+
+.headline-description .single-animation h5{
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: .3rem;
+  margin-right: -.3rem
+}
+
+.single-animation .cta-btn{
+  font-size: 1.1rem;
+  background-color: #fff;
+  padding: .8rem 1.6rem;
+  color: var(--maincolor);
+  font-weight: bold;
+  transition: background-color .5s
+}
+
+.cta-btn:hover,
+.cta-btn:focus{
+  color: #fff;
+  background-color:var(--second-color)
+}
+
+/********************[ End Hero Section ]***********************/
+/***************************************************************/
+/***************************************************************/
+/*******************[ Start Our Story Section]******************/
+.restorant-info{
+  text-align: center
+}
+
+.restorant-info .restorant-desc{
+  margin-bottom: 3rem
+}
+
+.restorant-desc .global-headline{
+  margin-top: 6.9rem;
+}
+
+
+.global-headline .sub-headline{
+  letter-spacing: -1px;
+  line-height: .42
+}
+
+.global-headline .headline-dark{
+  color: var(--dark-color);
+  letter-spacing: .7rem;
+  margin-right: -.7rem
+}
+
+.global-headline .fa-asterisk{
+  color: var(--body-color);
+  margin: 2.4rem 0;
+}
+
+.restorant-desc p{
+  line-height: 1.6;
+  margin-bottom: 2.4rem
+}
+
+.restorant-desc .body-btn{
+  font-size: 1.5rem;
+  color: var(--second-color);
+  position: relative;
+  transition: color .5s
+}
+
+
+.body-btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background-color:  var(--second-color);
+  transition: background-color .5s
+}
+
+
+.body-btn:hover,
+.body-btn:focus{
+  color: var(--dark-color)
+}
+
+.body-btn:hover::before,
+.body-btn:focus::before{
+   background-color:  var(--dark-color)
+}
+
+/******************[ End Our Story Section ]********************/
+/***************************************************************/
+/***************************************************************/
+/*****************[ Start Tasteful recipes Section]*************/
+.tasteful-recipes{
+  background: url(../img/tasteful-recipes.jpg) center no-repeat;
+  background-size: cover;
+}
+
+/***************[ End Tasteful recipes Section ]****************/
+/***************************************************************/
+/***************************************************************/
+/*****************[ Start Discover Our Menu Section]*************/
+
+.discover-our-menu{
+  text-align: center
+}
+
+.images-group img{
+  border-radius: 1rem;
+  padding: .5rem;
+  border: 1px solid #eee;
+}
+
+.discover-our-menu .restorant-desc{
+  padding-top: 2rem;
+  margin-bottom: 0;
+}
+/***************[ End  Discover Our Menu Section ]****************/
+/***************************************************************/
+/***************************************************************/
+/*****************[ Start Perfect blend Section]*************/
+.perfect-blend{
+  background: url(../img/perfect-blend.jpg) center no-repeat;
+  background-size: cover;
+}
+/***************[ End  Discover Our Menu Section ]****************/
+/***************************************************************/
+/***************************************************************/
+/***************[ Start Culinary delight Section]*****************/
+
+
+/***************[ End  Culinary delight Section ]****************/
+/***************************************************************/
+/***************************************************************/
+/************************[ Start Footer]***********************/
+footer{
+  padding: 7.9rem 0;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+footer .back-to-top{
+  width: 7rem;
+  height: 7rem;
+  line-height: 7rem;
+  background-color: #121212;
+  border-radius: 50%;
+  font-size: 3rem;
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer .back-to-top .fa-chevron-up{
+  /*Aniamtion Part*/
+  animation: up 2s infinite;
+}
+
+footer .back-to-top:hover .fa-chevron-up{
+  color: var(--second-color);
+}
+
+footer .footer-content {
+  overflow: hidden;
+}
+
+.footer-content h4{
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: 3rem;
+}
+
+
+.footer-content .footer-content-about{
+  margin-bottom: 5.4rem;
+}
+
+.footer-content-about .asterisk{
+  margin: 2.4rem 0;
+}
+
+.footer-content-about p{
+  line-height: 2;
+}
+
+.footer-content-divider .social-media .social-icons{
+  list-style: none;
+  margin-bottom: 5.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons a{
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  opacity: .7;
+  transition:  color .5s;
+}
+.social-icons a:hover,
+.social-icons a:focus{
+  color: var(--second-color);
+}
+
+.footer-content-divider .newsletter-content .newsletter-form{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-form .newsletter-input{
+  width: 100%;
+  max-width: 25rem;
+  padding: 1rem;
+  border-radius: .5rem ;
+}
+
+.newsletter-form .newsletter-btn{
+  background: transparent;
+  border: none;
+  color: var(--dark-color);
+  padding: 1px 1rem;
+  font-size: 2rem;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  margin-left: 10.5rem;
+  transition: color .5s;
+}
+
+.newsletter-form .newsletter-btn:hover,
+.newsletter-form .newsletter-btn:focus{
+  color: var(--second-color);
+}
+
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+/*******************[ Start Media Responsive]*******************/
+@media screen and (min-width: 900px) {
+
+/*****[golobal]******/
+  section{
+    padding: 7.9rem;
+  }
+
+  .padding-right{
+    padding-right: 7rem;
+  }
+
+/*****[Navbar]******/
+  .menu-toggle{
+    display: none;
+  }
+
+  nav{
+    justify-content: space-between;
+  }
+
+  .nav-list{
+    position: initial;
+    top: initial;
+    left: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    padding: 0;
+    flex-direction: row;
+    justify-content:space-between;
+    transform: initial;
+    transition: initial;
+  }
+
+  .nav-item {
+    border-bottom: none;
+    margin: 0 2.4rem;
+  }
+
+  .nav-item:last-child{
+    margin-right: 0;
+  }
+
+  .nav-link{
+    font-size: 1.3rem;
+  }
+
+  .nav-link.active{
+    position: relative;
+    color: var(--second-color);
+    font-weight: bold;
+  }
+
+  .nav-link.active::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--second-color);
+    left: 0;
+    bottom: -3px;
+  }
+
+/*****[hero section]******/
+  .sub-headline{
+    font-size: 10rem;
+  }
+  
+  .sub-headline .first-letter{
+    font-size: 12.5rem;
+  }
+
+  
+  .headline{
+    font-size: 4.7rem;
+    letter-spacing: .8rem;
+  }
+
+  .seprator .line{
+    max-width: 11.4rem;
+  }
+
+/*****[discover-our-story]******/
+/*****[discover-our-menu]*******/
+/*****[Culinary delight]********/
+
+  .restorant-info{
+    display: flex;
+    align-items: center;
+  }
+
+  .restorant-info > div{
+    flex: 1;
+  }
+
+  /*****[Footer]********/
+  .footer-content{
+    max-width: 77.5rem;
+    margin: auto;
+  }
+
+  .footer-content .footer-content-about{
+    max-width: 51.3rem;
+    margin: 0 auto 5.3rem;
+  }
+
+  .footer-content .footer-content-divider{
+    display: flex;
+  }
+
+  .footer-content-divider > div{
+    flex: 1;
+  }
+}
+/*********************[ End Media Responsive]******************/
+/***************************************************************/
+/***************************************************************/
+/**********************[ Start Animation]**********************/
+
+@keyframes fadeUp{
+  0%{
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fadeDown{
+  0%{
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+
+@keyframes fadeRight{
+  0%{
+    transform: translateX(40rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+
+@keyframes fadeLeft{
+  0%{
+    transform: translateX(-40rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+@keyframes scale{
+  0%{
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform:  scale(1)
+  }
+}
+
+@keyframes grow{
+  0%{
+    transform: width(0);
+  }
+  100% {
+    opacity: 1;
+    transform:  width(100%)
+  }
+}
+
+@keyframes spin{
+  0%{
+    transform: rotate(0)
+  }
+  100% {
+    opacity: 1;
+    transform:  rotate(360deg)
+  }
+}
+
+@keyframes up{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform:  translateY(-1rem)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

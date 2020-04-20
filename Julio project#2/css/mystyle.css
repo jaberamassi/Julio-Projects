@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css?family=Niconne&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Teko:300,400&display=swap");
+
+:root {
+  --maincolor: #c69963;
+  --secondcolor: #101d2c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.btn {
+  width: 100px;
+  padding: 5px 0 !important;
+  border: 1px solid var(--maincolor);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/************************[ End Global ]********************/
+/**********************************************************/
+/***********************************************************/
+/*************[ Start Fixed Logo & Nav Bar Div ]************/
+a {
+  color: #fff !important;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(16, 29, 44, 0.95), rgba(16, 29, 44, 0.95)),
+    url(../img/header-bg.jpg) center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+header > .container {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+header .hamburger-menu {
+  position: fixed;
+  top: 25px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  /*حتى يتم توزيع الايقونات داخلها بطريقة الفلكس*/
+  background-color: #101c2d;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.hamburger-menu .fa-bars,
+.hamburger-menu .fa-times {
+  font-size: 30px;
+  color: rgba(198, 153, 99, 0.7);
+  margin: auto;
+}
+
+.hamburger-menu .fa-times {
+  display: none;
+}
+
+.hamburger-menu .fa-times.open {
+  display: block;
+}
+
+.hamburger-menu .fa-bars.open {
+  display: none;
+}
+
+/*Start Nav*/
+/*Start Nav*/
+/*Start Nav*/
+
+header nav .navbar-brand {
+  position: absolute;
+  width: 100%;
+  max-width: 100px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 650ms;
+}
+
+nav .navbar-brand:hover {
+  opacity: 0.8;
+}
+
+nav .nav-list {
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #101d2c;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  /* لاخفاء القائمة*/
+  transform: scale(0);
+  /* لاخفاء القائمة*/
+  transition: opacity 0.6s;
+}
+
+nav .nav-list.open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*End Nav*/
+/*End Nav*/
+
+header .hero-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-family: "Niconne", cursive;
+  color: var(--maincolor);
+}
+
+/*****************[ End  Fixed Logo & Nav Bar ]**************/
+/************************************************************/
+/***********************************************************/
+/********************[ Start About Section ]*****************/
+.section-heading h4 {
+  line-height: 0;
+  font-family: "Teko", sans-serif;
+  color: var(--secondcolor);
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.section-heading h1 {
+  font-family: "Niconne", cursive;
+  color: var(--maincolor);
+}
+
+.about .btn {
+  color: var(--maincolor) !important;
+  width: 350px;
+  transition: all 650ms;
+}
+
+.about .btn:hover {
+  color: #fff !important;
+  background-color: var(--maincolor);
+}
+/***********************************************************/
+/********************[ Start Menu Section ]*****************/
+.menu {
+  background-color: var(--secondcolor);
+}
+
+.menu .shop-info .fa-clock,
+.menu .shop-info .fa-map-marked,
+.menu .shop-info .fa-mobile-alt {
+  color: var(--maincolor) !important;
+}
+
+.shop-info h1 {
+  font-size: 25px;
+  font-family: "Teko", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.shop-info p,
+.shop-info address {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu .point-left,
+.menu .point-right {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+}
+
+.menu .point-left::before,
+.menu .point-right::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: inherit;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 2;
+}
+
+.menu .menu-item-desc {
+  padding: 50px 10px;
+  color: #222;
+  margin: auto; /*لعمله في المنتصف لان الاب فلكس*/
+}
+
+.menu-item-desc h6 {
+  color: var(--maincolor);
+}
+
+.menu-item-desc h2 {
+  color: var(--secondcolor);
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-family: "Teko", sans-serif;
+  font-weight: 300;
+}
+
+/***********************************************************/
+/********************[ Start Our Chefs Section]**************/
+.chefs .chef-photo {
+  height: 600px;
+  overflow: hidden;
+}
+.chefs .chef-photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.chefs .card-body h2 {
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-family: "Teko", sans-serif;
+  font-weight: 300;
+}
+
+.chefs .card-body h6 {
+  font-size: 16px;
+  color: var(--maincolor);
+}
+
+/***********************************************************/
+/******************[ Start Our Footer Section]**************/
+footer {
+  background-color: var(--secondcolor);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/***********************************************************/
+/********************[ Start Media Responsive]*****************/
+@media (min-width: 576px) {
+  nav .navbar-brand {
+    max-width: 150px !important;
+    transform: translateX(-50%);
+    transition: opacity 650ms;
+  }
+  header .hamburger-menu {
+    top: 35px;
+    right: 25px;
+  }
+
+  .menu .point-left::before,
+  .menu .point-right::before {
+    display: none;
+  }
+
+  .menu .menu-item-desc {
+    padding: 50px 20px;
+  }
+} /*End  576px*/
+
+@media (min-width: 768px) {
+  .btn {
+    width: 150px !important;
+  }
+} /*End  768px*/
+
+@media (min-width: 992px) {
+  header > .container {
+    position: relative;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .hamburger-menu {
+    display: none !important;
+  }
+
+  .navbar-brand {
+    position: initial !important;
+    transform: initial !important;
+  }
+
+  nav .nav-list {
+    position: initial;
+    width: initial;
+    height: initial;
+    background-color: initial;
+    flex-direction: row;
+    opacity: initial;
+    transform: initial;
+    transition: initial;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list .nav-item {
+    margin: 0 30px;
+  }
+
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+
+  .nav-link {
+    padding: 0;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    background-color: var(--maincolor);
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 350ms;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+} /*End  992px*/
+
+@media (min-width: 1200px) {
+  .menu .point-left::before,
+  .menu .point-right::before {
+    display: block;
+    top: 50%;
+    left: initial;
+    transform: translateX(0);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .menu .point-right::before {
+    right: -12px;
+  }
+
+  .menu .point-left::before {
+    left: -12px;
+  }
+
+  .menu .menu-item-desc {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .menu-item-desc p {
+    display: none;
+  }
+
+  .menu-item-desc .btn {
+    color: #fff !important;
+    background-color: var(--maincolor);
+  }
+} /*End  1200px*/

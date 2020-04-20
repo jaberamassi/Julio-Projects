@@ -1,0 +1,750 @@
+
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+/*Global styles*/
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html{
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  color: #eee;
+  background: url(../img/sitebg.jpg) center no-repeat fixed;
+  background-size: cover;
+}
+
+section{
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+img{
+  width: 100%;
+  max-width: 100%;
+}
+
+a{
+  text-decoration: none !important;
+  color: #eee;
+}
+
+p{
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+
+.container{
+  width: 100%;
+  max-width: 122.5rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
+.section-heading{
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-heading h2{
+  font-size: 3rem;
+  color:rgba(255, 255, 255, .5);
+  text-transform: uppercase;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.section-heading h2::before,
+.section-heading h2::after{
+  content: "";
+  display: block;
+  position: absolute;
+  background-color:rgba(255, 255, 255, .75);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-heading h2::before{
+  height: 4px;
+  width: 10rem;
+  bottom: -5px;
+  border-radius: 5px;
+}
+
+.section-heading h2::after{
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -1rem;
+  border-radius:50%;
+}
+
+.section-heading h4{
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+/************************[ End Global ]********************/
+/**********************************************************/
+/***********************************************************/
+/****************[ Start header & Nav Bar ]***************/
+header{
+  width: 100%;
+  height: 100vh;
+}
+
+header .top-nav{ /*يتم تنسيقها وبعدها نقوم باخفاءها اما دسبلي نن او توب سالب 100%*/
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top:-100vh;
+  background-color: #16162d;
+  border-bottom-left-radius: 100%; /*لاعطاء حركة حلوة مثل اغلاق الستارة*/
+  border-bottom-right-radius:100%;
+  transition: all .65s ease-in
+}
+
+.top-nav .nav-list{ /* يتم تنسيقها في حالة كانت مفتوحة وبعدها في الميديا يتم تغيير التنسيق*/
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*لان قائمة الناف بشكل افقي وليس عمودي*/
+  align-items: center;
+}
+
+.nav-list .nav-item{
+  margin: 0 2rem;
+}
+
+.nav-item .nav-link{
+  font-family: 'Dancing Script', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+  background: linear-gradient(to top, #ffe838, #fd57bf);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+}
+
+.top-nav.open{
+  top: 0;
+  border-radius: initial;
+  z-index: 900;
+}
+
+.menu-toggle{
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+  width: 5rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 999;
+  transition: all .65s ease-out;
+}
+
+.menu-toggle.open{
+  transform: rotate(-45deg);
+}
+
+.menu-toggle .bar{
+  background:  linear-gradient(to right, #ffe838, #fd57bf);
+  width: 100%;
+  height: .4rem;
+  border-radius: .8rem;
+}
+
+.bar.half{
+  width: 50%;
+}
+
+.bar.start{
+  transform-origin: right;
+  transition: transform .65s ease-in-out;
+}
+
+.open .bar.start{
+  transform: rotate(-450deg) translateX(.8rem);
+}
+
+.bar.end{
+  align-self: flex-end;
+  transform-origin: left;
+  transition: all .65s ease-in-out;
+}
+
+.open .bar.end{
+  transform: rotate(-450deg) translateX(-.8rem);
+}
+
+.landing-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  user-select: none
+}
+
+.landing-text h1{
+  font-size: 15rem;
+  font-family: 'Dancing Script', sans-serif;
+  background: linear-gradient(to top, #ffe838, #fd57bf);
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.landing-text h5{
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+/*****************[ End  header & Nav Bar  ]******************/
+/***************************************************************/
+/***************************************************************/
+/*********************[ Start  About Section]********************/
+.about .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .profile-img{
+  flex: 1;
+  margin-right: 5rem;
+}
+
+.about .about-details{
+  flex: 1;
+}
+
+.about-details .about-heading{
+  text-transform: uppercase;
+  text-align: center;
+  line-height: -5;
+  margin-bottom: 6rem;
+}
+
+.about-heading h2{
+  font-size: 10rem;
+  opacity: .5;
+  line-height: 0;
+}
+
+.about-heading h5{
+  font-size: 2rem;
+}
+
+.about-details .social-media{
+  margin-top: 5rem;
+}
+
+.social-media .icon-list{
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+}
+
+.social-media .icon-list .fa-facebook-square,
+.social-media .icon-list .fa-twitter-square,
+.social-media .icon-list .fa-dribbble-square{
+  margin: 0 3rem;
+  font-size: 4rem;
+  transition: color .65s;
+}
+.fa-facebook-square:hover{
+  color: #4267b2;
+}
+.fa-twitter-square:hover{
+  color: #38a1f3;
+}
+.fa-dribbble-square:hover{
+  color: #ea4c89;
+}
+/********************[ End About Section ]***********************/
+/***************************************************************/
+/***************************************************************/
+/*******************[ Start Services Section]******************/
+.my-skills{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2.5rem;
+}
+
+.my-skills .skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.skill h3{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 2rem -2px 2rem 0;
+}
+
+.skill .icon-container{
+  height: 10rem;
+  width: 10rem;
+  border: 1.5px solid #ffe838;
+  background-color: #fd57bf;
+  margin-bottom: 2rem;
+  display: flex;
+  transform: rotate(45deg);
+}
+
+.skill .icon-container .fa-layer-group,
+.skill .icon-container .fa-code,
+.skill .icon-container .fa-chart-bar{
+  transform: rotate(-45deg);
+  color: #ffe838;
+  font-size: 5rem;
+  margin: auto;
+}
+
+/******************[ End Services Section ]********************/
+/***************************************************************/
+/***************************************************************/
+/*****************[ Start Protfolio Section]*************/
+.protfolio-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.protfolio-item:last-child{
+  margin-bottom: 0;
+}
+
+.protfolio-item  > div:first-child{
+  margin-right: 4rem;
+}
+
+.protfolio-item .protfolio-img{
+  flex: 1;
+}
+
+.protfolio-item .protfolio-desc{
+  flex: 1;
+}
+
+.protfolio-desc h5{
+  font-size: 1.5 rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: .5;
+}
+
+.protfolio-desc .cta{
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #3883ff;
+  transition:all .5s ease-in-out;
+}
+
+.protfolio-desc .cta:hover {
+  color:#2f67cd ;
+  background: linear-gradient(to left, #ffe838, #fd57bf);
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+/***************[ End Protfolio Section ]****************/
+/***************************************************************/
+/***************************************************************/
+/**************[ Start experience Section]*************/
+.experience .time-line{
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 3px solid #ffe838;
+  border-radius: .8rem;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.time-line ul{
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: center;
+  padding:5rem;
+}
+
+.time-line ul .date{
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.time-line ul .date:last-child{
+  border: none;
+  margin-bottom:0;
+  padding-bottom: 0;
+}
+
+.time-line ul .date::before,
+.time-line ul .date::after{
+  display: block;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50);
+  
+}
+
+.time-line ul > li::before{
+  content: attr(data-date);
+  left:-18rem;
+  min-width: 11rem;
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.time-line ul > li::after{
+  content: "";
+  width: 1.8rem;
+  height: 1.8rem;
+  left: -6.1rem;
+  background-color: #16162d;
+  border: 4px solid #fd57bf;
+  border-radius: 50%;
+
+}
+.time-line ul h2{
+  color: rgba(255, 255, 255, .5);
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/***************[ End  experience Section ]****************/
+/***************************************************************/
+/***************************************************************/
+/*****************[ Start Contact Section]*************/
+.contact{
+  background-color: #221e3f;
+}
+
+.contact form{
+  width: 70%;
+  margin: 0 auto;
+}
+
+form label{
+  font-size: 1.5rem;
+}
+
+form input,
+form select,
+form textarea{
+  width: 100%;
+  margin: 0 0 2rem 0 ;
+  padding: .7rem;
+  outline-color: #fd57bf;
+  color: #000;
+  border: none;
+}
+
+form input[type="submit"] {
+  width: initial;
+  background-color: #fd57bf;
+  color: #eee;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  transition: all .65s;
+}
+
+form input[type="submit"]:hover{
+  color: #221e3f;
+  background-color: #ffe838;
+}
+
+/***************[ End  Contact Section ]****************/
+/*******************************************************/
+/*******************************************************/
+/************************[ Start Footer]****************/
+footer{
+  background-color: #16162d;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.fa-chevron-circle-up{
+  position: absolute;
+  right: 5rem;
+  top: -1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+footer p {
+  font-size: 1.4rem;
+  padding: 0;
+  margin: 0;
+  color:rgba(255, 255, 255, .5);
+}
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+/*******************[ Start Media Responsive]*******************/
+@media screen and (max-width: 768px) {
+/*****[golobal]******/
+  body{
+    background: url(../img/sitebg2.jpg) center no-repeat fixed;
+    background-size: cover;
+  }
+  
+  section {
+    padding: 1rem;
+  }
+
+
+/*****[Nav & Main]******/
+  .landing-text h1{
+    font-size: 10rem;
+  }
+
+  .landing-text h5{
+    font-size: 3rem;
+    font-weight: 100;
+  }
+
+  .top-nav .nav-list{
+    flex-direction: column;
+  }
+  
+  .nav-list .nav-item{
+    margin: 2rem auto;
+  }
+  
+  .nav-item .nav-link{
+    font-size: 4.5rem;
+    padding: 1rem;
+  }
+/*****[About]******/
+.about .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+.about-heading h2{
+  font-size: 8rem;
+  }
+
+/*****[Skills]******/
+  .skill .icon-container{
+    height: 7rem;
+    width: 7rem;
+  }
+
+  .skill .icon-container .fa-layer-group,
+  .skill .icon-container .fa-code,
+  .skill .icon-container .fa-chart-bar{
+    font-size: 3rem;
+  }
+
+/*****[Experiance]******/
+  .time-line ul{
+  margin: 0 0 0 auto;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  /*****[golobal]******/
+    body{
+      background: url(../img/sitebg2.jpg) center no-repeat fixed;
+      background-size: cover;
+    }
+    
+    section {
+      padding: 1rem;
+    }
+  
+  
+  /*****[Nav & Main]******/
+
+    .top-nav .nav-list{
+      flex-direction: column;
+    }
+    
+    .nav-list .nav-item{
+      margin: 3rem auto ;
+    }
+    
+    .nav-item .nav-link{
+      font-size: 5.5rem;
+      padding: 2rem;
+    }
+  }
+/*********************[ End Media Responsive]******************/
+/***************************************************************/
+/***************************************************************/
+/**********************[ Start Animation]**********************/
+
+@keyframes fadeUp{
+  0%{
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fadeDown{
+  0%{
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+
+@keyframes fadeRight{
+  0%{
+    transform: translateX(40rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+
+@keyframes fadeLeft{
+  0%{
+    transform: translateX(-40rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+@keyframes scale{
+  0%{
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform:  scale(1)
+  }
+}
+
+@keyframes grow{
+  0%{
+    transform: width(0);
+  }
+  100% {
+    opacity: 1;
+    transform:  width(100%)
+  }
+}
+
+@keyframes spin{
+  0%{
+    transform: rotate(0)
+  }
+  100% {
+    opacity: 1;
+    transform:  rotate(360deg)
+  }
+}
+
+@keyframes up{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform:  translateY(-1rem)
+  }
+}
+
+@keyframes pulse{
+  0%{
+    box-shadow: 0 0 0 0 rgba(253, 87, 191, .99);
+  }
+  70%{
+    box-shadow: 0 0 0 2rem rgba(253, 87, 191, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 87, 191, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
